@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    margin: 2rem 20%;
+}
+
+#data {
+    height: 150px;
+}
+
+#json {
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+}

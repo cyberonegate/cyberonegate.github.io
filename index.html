@@ -4,11 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="./assets/images/favicon.png" />
+
+    <!-- Boostrap-->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Alert-->
+    <link href="node_modules/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+
+    <!-- CSS cho jquery.json-viewer -->
+    <link rel="stylesheet" type="text/css" href="node_modules/jquery.json-viewer/json-viewer/jquery.json-viewer.css">
+
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <title>2H Global</title>
 </head>
 <body>
+    <div id="app">
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-totp-tab" data-bs-toggle="pill" data-bs-target="#pills-totp" type="button" role="tab" aria-controls="pills-totp" aria-selected="true">GET TOTP</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-format-json-tab" data-bs-toggle="pill" data-bs-target="#pills-format-json" type="button" role="tab" aria-controls="pills-format-json" aria-selected="false">FORMAT JSON</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-totp" role="tabpanel" aria-labelledby="pills-totp-tab">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="token">Enter token:</label>
+                                    <input class="form-control mt-2" id="token">
+                                    <button id="btn-getTotp" class="btn btn-success mt-2 mb-4">Submit</button>
+                                    <br>
 
-<script src="assets/js/main.js"></script>
+                                    <label for="totp">Result:</label>
+                                    <textarea class="form-control mt-2" id="totp" readonly></textarea>
+                                    <button class="btn btn-success mt-2" id="btn-copy-totp">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-format-json" role="tabpanel" aria-labelledby="pills-format-json-tab">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="data">Enter Data:</label>
+                                    <textarea class="form-control mt-2" id="data"></textarea>
+                                    <button id="btn-transform" class="btn btn-success mt-2 mb-4">Transform</button>
+                                    <br>
+
+                                    <label for="json">Result:</label>
+                                    <div id="json"></div>
+                                    <div id="json-result"></div>
+                                    <button class="btn btn-success mt-2" id="btn-copy-json">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Boostrap -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--  jQuery and jquery.json-viewer JS -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/jquery.json-viewer/json-viewer/jquery.json-viewer.js"></script>
+    <script src="node_modules/json5/dist/index.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
