@@ -16,3 +16,17 @@
     border: 1px solid #dee2e6;
     border-radius: 0.375rem;
 }
+
+/* Media query tablet */
+@media (max-width: 768px) {
+    #app {
+        margin: 2rem 10%;
+    }
+}
+
+/* Media query mobile */
+@media (max-width: 480px) {
+    #app {
+        margin: 2rem 1rem;
+    }
+}
