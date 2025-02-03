@@ -47,15 +47,16 @@ $(document).ready(function() {
         navigator.clipboard.writeText(totpText);
     });
 
-    $("#btn-transform").click(function() {
+    $("#btn-transform").click(function(event) {
         event.preventDefault();
         let inputData = $("#data").val();
+        let jsonData = JSON5.parse(inputData);
+
+        $("#json-result").val(jsonData);
+        $('#json').jsonViewer(jsonData);
 
         try {
-            let jsonData = JSON5.parse(inputData);
 
-            $("#json-result").val(jsonData);
-            $('#json').jsonViewer(jsonData);
 
         } catch (error) {
             Swal.fire({
@@ -67,7 +68,7 @@ $(document).ready(function() {
         }
     });
 
-    $("#btn-copy-json").click(function() {
+    $("#btn-copy-json").click(function(event) {
         event.preventDefault();
         let jsonResult = $("#json-result").val();
         jsonResult = JSON5.stringify(jsonResult, null, 4);
